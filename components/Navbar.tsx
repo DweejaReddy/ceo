@@ -46,7 +46,7 @@ const Navbar = () => {
           <a href="#timeline">Timeline</a>
         </li>
         <li className="p-3 w-24 hover:underline">
-          <a href="#broucher">Brochure</a>
+          <a href="https://drive.google.com/file/d/1TRfgslkM1nmKzppj1V_oxCB2ox94cMEj/view" target="_blank">Brochure</a>
         </li>
         <li className="p-3 w-32 hover:underline">
           <a href="#footer">Contact Us</a>

@@ -2,12 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body{
   background-color: #161716;
 }
 html{
   scroll-behavior: smooth;
+}
+
+.custom-img{
+  background-image: url(../public/assets/expo.jpg);
 }
 
 .fade-in {
