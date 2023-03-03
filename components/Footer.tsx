@@ -51,9 +51,9 @@ const Footer = () => {
 
       <div className="py-3">
         <p className="py-2">For Association Opportunities Contact:</p>
-        <Link href="mailto:contact@ecellvnit.org" className="py-1 font-bold">contact@ecellvnit.org</Link>
+        <Link href="mailto:contact@ecellvnit.org" className="py-1 font-bold">consortium@ecellvnit.co.in</Link>
         <p className="py-2">For Sponsorship Opportunities Contact:</p>
-        <Link href="mailto:corporate@ecellvnit.org" className="py-1 font-bold">corporate@ecellvnit.org</Link>
+        <Link href="mailto:corporate@ecellvnit.org" className="py-1 font-bold">corporateaffairs@ecellvnit.co.in</Link>
         <p className="py-8">&copy;&nbsp;<Link href="https://www.ecellvnit.org/" target='_blank' className="text-[#ff5757]">Ecell VNIT</Link> All rights reserved.</p>
 
       </div>
