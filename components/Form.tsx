@@ -72,13 +72,11 @@ const Form = () => {
         });
       }
       setForm(initRegister);
-      window.location.href = "/";
     },
   })
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(form);
     mutation.mutate(form);
   }
 
@@ -224,7 +222,7 @@ const Form = () => {
             </div>
 
             <div className="flex flex-col">
-              <label htmlFor="student" className="text-gray-500 font-bold">
+              <label htmlFor="alum" className="text-gray-500 font-bold">
                 Are you a VNIT, Nagpur Student/Alumni*
               </label>
               <div className="flex mt-3">
@@ -234,10 +232,9 @@ const Form = () => {
                 <input
                   name="alum"
                   id="Yes"
-                  checked={form.alum === true}
                   type="radio"
                   value="yes"
-                  onChange={handleChange}
+                  onChange={(e) => handleCustChange("alum", e.target.value === "yes")}
                 />
                 <label htmlFor="no" className="text-gray-500 font-bold mr-5 ml-8">
                   No
@@ -246,9 +243,8 @@ const Form = () => {
                   name="alum"
                   id="No"
                   type="radio"
-                  checked={form.alum === true}
                   value="no"
-                  onChange={(e) => handleCustChange("alum", e.target.checked)}
+                  onChange={(e) => handleCustChange("alum", e.target.value === "yes")}
                 />
               </div>
               {/* {errors.student && touched.student && (
