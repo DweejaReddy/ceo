@@ -4,7 +4,7 @@ import Home from "../public/assets/home.jpg";
 
 const About = () => {
   return (
-    <div className="w-full bg-white py-16" id="about">
+    <div className="w-full bg-white py-16 px-4" id="about">
       <div className="mx-auto grid md:grid-cols-2 gap-8">
         <Image className="" src={Home} alt="Home" />
         <div className="flex flex-col justify-center">
@@ -13,7 +13,7 @@ const About = () => {
           <p className="text-xl">
             StartupExpo is an exhibition event for startups that draws participants, speakers, investors, and organisations from all around India. Startups will have a fantastic platform to share their cutting-edge innovations with the rest of the world at the event, which will also introduce them to a fantastic community that will support their progress. Startups that are interested should complete this form:
           </p>
-          <button className="text-[#ffffff] w-[200px] rounded-md font-medium my-8 mx-auto md:mx-0 py-3 bg-[#000300] hover:scale-105 hover:text-white duration-200">
+          <button className="text-[#ffffff] w-[200px] font-medium my-8 mx-auto md:mx-0 py-3 bg-[#000300] hover:scale-105 hover:text-white duration-200">
             <a href='#form'>Register Now</a>
           </button>
         </div>

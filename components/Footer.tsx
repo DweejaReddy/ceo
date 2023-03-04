@@ -129,7 +129,7 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-1 gap-8 lg:col-span-2 lg:grid-cols-3">
             <div>
-              <p className="font-medium">Organisation</p>
+              <p className="font-semibold">Organisation</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-white">
                 <a className="hover:opacity-75" href="https://www.ecellvnit.org/#about">
                   {" "}
@@ -151,7 +151,7 @@ const Footer = () => {
               </nav>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <p className="font-medium">In case of any query contact</p>
+              <p className="font-bold">In case of any query contact</p>
               <nav className="flex flex-col mt-4 space-y-2 text-sm text-white">
                 <div className="flex gap-2 items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -172,8 +172,8 @@ const Footer = () => {
               </nav>
             </div>
             <div>
-              <p className="font-medium">Legal</p>
-              <nav className="flex flex-col mt-4 space-y-2 text-sm text-white">
+              <p className="font-medium"></p>
+              <nav className="flex flex-col space-y-2 text-sm text-white">
                 <a className="hover:opacity-75" target="_blank" rel="noreferrer" href="mailto:contact@ecellvnit.org">
                   {" "}
                   For Queries and Details{" "}<br />

@@ -45,7 +45,7 @@ const Timeline = () => {
             <div className="w-full h-full p-2 md:pl-4">
               <h1 className="text-white text-xl font-medium py-2">Signing of MOUs</h1>
               <p className="text-gray-100 sm:text-sm text-xs">
-                Shortlisted Strtups will be signing the MOUs and further details will be communicated.
+                Shortlisted Startups will be signing the MOUs and further details will be communicated.
               </p>
             </div>
           </div>

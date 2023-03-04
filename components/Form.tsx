@@ -232,9 +232,9 @@ const Form = () => {
                   Yes
                 </label>
                 <input
-                  name="student"
+                  name="alum"
                   id="Yes"
-                  checked={true}
+                  checked={form.alum === true}
                   type="radio"
                   value="yes"
                   onChange={handleChange}
@@ -246,8 +246,8 @@ const Form = () => {
                   name="alum"
                   id="No"
                   type="radio"
-                  checked={false}
-                  value="No"
+                  checked={form.alum === true}
+                  value="no"
                   onChange={(e) => handleCustChange("alum", e.target.checked)}
                 />
               </div>
@@ -298,7 +298,7 @@ const Form = () => {
           <div className="flex items-center">
             <button
               type="submit"
-              className="text-[#ffffff] w-[200px] rounded-md font-medium my-8 mx-auto  py-3 bg-[#000300] hover:scale-105 duration-200"
+              className="text-[#ffffff] w-[200px] font-medium my-8 mx-auto  py-3 bg-[#000300] hover:scale-105 duration-200"
             >
               Submit
             </button>

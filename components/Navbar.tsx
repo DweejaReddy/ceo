@@ -6,6 +6,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import Image from "next/image";
 
+import logo from "../public/assets/logo.png"
+
 import ecellLogoWhite from "../public/assets/ecell-white-img.png";
 import ecellLogoBlack from "../public/assets/ecell-black-img.png";
 
@@ -13,16 +15,16 @@ const navigation = [
   { name: "Home", href: "#" },
   { name: "About Expo", href: "#about" },
   { name: "Timeline", href: "#timeline" },
-  { name: "Brochure", href: "https://drive.google.com/file/d/1TRfgslkM1nmKzppj1V_oxCB2ox94cMEj/view" },
+  { name: "Brochure", href: "https://drive.google.com/file/d/1UXup2gcrdkC8_WR1u1gMIHfyxiITEFlH/view" },
   { name: "Contact Us", href: "#contact" },
 ];
 
 const Navbar = () => {
   return (
     <Popover className="relative w-full">
-      <div className="max-w-7xl px-6">
+      <div className="px-6">
         <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
-          <div className="flex justify-start">
+          <div className="flex gap-4 justify-start">
             <a href="https://www.ecellvnit.org/">
               <span className="sr-only">E-Cell VNIT</span>
               <Image
@@ -31,6 +33,16 @@ const Navbar = () => {
                 priority
                 src={ecellLogoWhite}
                 alt="E-Cell VNIT"
+              />
+            </a>
+            <div className="border bg-white border-white"></div>
+            <a href="https://www.ecellvnit.org/">
+              <Image
+                height={150}
+                width={150}
+                priority
+                src={logo}
+                alt="Expo"
               />
             </a>
           </div>
@@ -42,7 +54,7 @@ const Navbar = () => {
           </div>
           <Popover.Group
             as="nav"
-            className="hidden space-x-10 md:flex"
+            className="w-full hidden space-x-10 md:flex md:justify-end"
           >
             {navigation.map((item, idx) => (
               <a
