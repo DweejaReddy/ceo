@@ -23,11 +23,11 @@ const Hero = () => {
                 className="inline-flex justify-center py-4"
               />
             </div>
-            <div className="h-full flex flex-col gap-8 justify-start items-center">
+            <div className="h-full flex flex-col gap-12 justify-start items-center">
               <div className="md:text-3xl text-2xl py-2">
                 Awaits You...
               </div>
-              <div className="flex flex-col items-center md:flex-row justify-center gap-6 w-full h-full">
+              <div className="flex flex-col items-start md:flex-row justify-center gap-6 w-full h-full">
                 <a
                   href="#form"
                   className="bg-[#ff5757] hover:bg-red-500 p-4 w-3/4 md:w-1/4 lg:w-1/6 rounded-md text-2xl text-center"
