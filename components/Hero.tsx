@@ -27,12 +27,20 @@ const Hero = () => {
               <div className="md:text-3xl text-2xl py-2">
                 Awaits You...
               </div>
-              <a
-                href="#form"
-                className="bg-[#ff5757] hover:bg-red-500 p-4 w-3/4 md:w-1/6 rounded-md text-2xl text-center"
-              >
-                Register
-              </a>
+              <div className="flex flex-col items-center md:flex-row justify-center gap-6 w-full h-full">
+                <a
+                  href="#form"
+                  className="bg-[#ff5757] hover:bg-red-500 p-4 w-3/4 md:w-1/4 lg:w-1/6 rounded-md text-2xl text-center"
+                >
+                  Register
+                </a>
+                <a
+                  href="https://drive.google.com/file/d/1TRfgslkM1nmKzppj1V_oxCB2ox94cMEj/view" target="_blank"
+                  className="bg-[#ff5757] hover:bg-red-500 p-4 w-3/4 md:w-1/4 lg:w-1/6 rounded-md text-2xl text-center"
+                >
+                  Brochure
+                </a>
+              </div>
             </div>
           </div>
         </div>
