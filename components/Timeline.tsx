@@ -11,7 +11,7 @@ const Timeline = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-9 px-4 py-10">
           <div className="col-span-4 w-full h-full ">
             <div className="w-full h-full p-2 md:pl-4">
-              <h1 className="text-white text-xl font-medium py-2">3rd March Registration Opens</h1>
+              <h1 className="text-white text-xl font-medium py-2">4th March Registration Opens</h1>
               <p className="text-gray-100 sm:text-sm text-xs">
                 Startups will be evaluated on the basis of their market & customer base and their product showcasing capability.
               </p>
@@ -66,7 +66,7 @@ const Timeline = () => {
           </div>
           <div className="col-span-4 w-full h-full ">
             <div className="w-full h-full p-2 md:pl-4">
-              <h1 className="text-white text-xl font-medium py-2">1st & 2nd April Expo LIVE</h1>
+              <h1 className="text-white text-xl font-medium py-2">31st March - 2nd April Expo LIVE</h1>
               <p className="text-gray-100 sm:text-sm text-xs">
                 Awaiting Startups to showcase their amazing ideas and products.
               </p>
