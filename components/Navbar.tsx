@@ -1,81 +1,117 @@
+"use client";
+import { Fragment } from "react";
+import { Popover, Transition } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+
+import React from "react";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import ecellLogoWhite from "../public/assets/ecell-white-img.png";
+import ecellLogoBlack from "../public/assets/ecell-black-img.png";
 
-import logo from "../public/assets/logo.png";
-import { useEventListener } from "./utils";
+const navigation = [
+  { name: "Home", href: "#" },
+  { name: "About Expo", href: "#about" },
+  { name: "Timeline", href: "#timeline" },
+  { name: "Brochure", href: "https://drive.google.com/file/d/1TRfgslkM1nmKzppj1V_oxCB2ox94cMEj/view" },
+  { name: "Contact Us", href: "#contact" },
+];
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false);
-  const [color, setcolor] = useState(false);
-
-
-  const changecolor = () => {
-    if (window.scrollY >= 670) {
-      setcolor(true);
-    } else {
-      setcolor(false);
-    }
-  };
-  useEventListener("scroll", changecolor);
-
-  useEffect(() => {
-
-  }, [])
-
   return (
-    <div
-      className={
-        color
-          ? "sticky top-0 flex justify-items-end items-center text-white px-4 sm:px-40 z-10 bg-[rgba(0,0,0,0.8)] h-14"
-          : "sticky top-0 flex justify-items-end items-center text-white px-4 sm:px-40 z-10 h-14"
-      }
-    >
-      <div className="w-full">
-        <Image className=' py-6 w-[7.5rem] h-[5.5rem] z-20' src={logo} alt="/" />
-      </div>
-      <ul className="hidden md:flex">
-        <li className="p-3 w-24 hover:underline">
-          <a href="#home">Home</a>
-        </li>
-        <li className="p-3 w-32 hover:underline">
-          <a href="#about">About Expo</a>
-        </li>
-        <li className="p-3 w-24 hover:underline">
-          <a href="#timeline">Timeline</a>
-        </li>
-        <li className="p-3 w-24 hover:underline">
-          <a href="https://drive.google.com/file/d/1TRfgslkM1nmKzppj1V_oxCB2ox94cMEj/view" target="_blank">Brochure</a>
-        </li>
-        <li className="p-3 w-32 hover:underline">
-          <a href="#footer">Contact Us</a>
-        </li>
-      </ul>
-
-      <div onClick={() => setNav(nav => !nav)} className="block z-20 md:hidden ">
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
-      </div>
-      <div
-        className={
-          nav
-            ? "fixed left-0 top-0 w-[60%] h-full border-l border-l-white-900 bg-[#575656] ease-in-out duration-500 z-20"
-            : "fixed left-[-100%]"
-        }
-      >
-        <div className="w-full">
-          <Image className='py-6 w-[7.5rem] h-[5.5rem] z-20' src={logo} alt="/" />
+    <Popover className="relative w-full">
+      <div className="max-w-7xl px-6">
+        <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
+          <div className="flex justify-start">
+            <a href="https://www.ecellvnit.org/">
+              <span className="sr-only">E-Cell VNIT</span>
+              <Image
+                height={150}
+                width={150}
+                priority
+                src={ecellLogoWhite}
+                alt="E-Cell VNIT"
+              />
+            </a>
+          </div>
+          <div className="-my-2 mr-2 md:hidden">
+            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <span className="sr-only">Open menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </Popover.Button>
+          </div>
+          <Popover.Group
+            as="nav"
+            className="hidden space-x-10 md:flex"
+          >
+            {navigation.map((item, idx) => (
+              <a
+                key={idx}
+                className="text-base font-medium text-white hover:text-gray-300"
+                href={item.href}
+              >
+                {item.name}
+              </a>
+            ))}
+          </Popover.Group>
         </div>
-
-        <ul className="pt-24">
-          <li className="p-4 underline"><a href="#home">Home</a></li>
-          <li className="p-4 underline"><a href="#about">About Expo</a></li>
-          <li className="p-4 underline"><a href="#timeline">Timeline</a></li>
-          <li className="p-4 underline"><a href="#broucher">Brochure</a></li>
-          <li className="p-4 underline"><a href="#footer">Contact Us</a></li>
-        </ul>
       </div>
-    </div>
+
+      <Transition
+        as={Fragment}
+        enter="duration-200 ease-out"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="duration-100 ease-in"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+      >
+        <Popover.Panel
+          focus
+          className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden"
+        >
+          <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+            <div className="px-5 pt-5 pb-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <Image
+                    height={100}
+                    width={100}
+                    priority
+                    src={ecellLogoBlack}
+                    alt="E-Cell VNIT"
+                  />
+                </div>
+                <div className="-mr-2">
+                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span className="sr-only">
+                      Close menu
+                    </span>
+                    <XMarkIcon
+                      className="h-6 w-6"
+                      aria-hidden="true"
+                    />
+                  </Popover.Button>
+                </div>
+              </div>
+              <div className="mt-6">
+                <nav className="grid gap-y-8">
+                  {navigation.map((item, idx) => (
+                    <a
+                      key={idx}
+                      className="text-base font-medium text-gray-900 hover:text-gray-700"
+                      href={item.href}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          </div>
+        </Popover.Panel>
+      </Transition>
+    </Popover>
   );
 };
 

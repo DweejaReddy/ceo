@@ -2,25 +2,39 @@ import Image from "next/image";
 import React from "react";
 
 import logo from '../public/assets/logo.png';
+import Navbar from "./Navbar";
 
 const Hero = () => {
   return (
-    <div className="text-white h-screen bg-center bg-cover custom-img mt-[-55px] section">
-      <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/70">
-        <div className="relative max-w-[800px] mt-0 w-full h-screen mx-auto text-center flex flex-col justify-center" id="home">
-          <p className="md:text-4xl sm:text-xl text-[1.2rem] py-2 text-[#ff5757]">
-            Connect, Collaborate and Sell
-          </p>
-          <div>
-            <Image className='mx-auto py-6' src={logo} alt="/" width={700} />
+    <div className="min-h-screen bg-[url('/assets/expo.jpg')] bg-cover bg-origin-border aspect-16 bg-center">
+      <div className="h-screen bg-black bg-opacity-[0.65]">
+        <Navbar />
+        <div className="flex flex-col justify-center items-center text-white p-4 lg:p-10 lg:py-10">
+          <div className="grid grid-rows-4 gap-4 w-full h-screen items-center">
+            <div className="md:text-5xl text-3xl text-center py-2 self-end text-[#ff5757]">
+              Connect, Collaborate and Sell
+            </div>
+            <div className="text-center">
+              <Image
+                src={logo}
+                alt="Expo"
+                height={200}
+                width={500}
+                className="inline-flex justify-center py-4"
+              />
+            </div>
+            <div className="h-full flex flex-col gap-8 justify-start items-center">
+              <div className="md:text-3xl text-2xl py-2">
+                Awaits You...
+              </div>
+              <a
+                href="#form"
+                className="bg-[#ff5757] hover:bg-red-500 p-4 w-3/4 md:w-1/6 rounded-md text-2xl text-center"
+              >
+                Register
+              </a>
+            </div>
           </div>
-
-
-          <p className="md:text-3xl sm:text-xl text-[1.2rem] py-2">
-            Awaits You...
-          </p>
-          <p className="md:text-2xl text-xl font-bold py-6">Hurry up!! Only few slots are left</p>
-          <button className="bg-[#ff5757] w-[200px] rounded-md text-2xl font-medium my-8 mx-auto p-5 text-black hover:scale-105 duration-200"><a href="#form">Register Now</a></button>
         </div>
       </div>
     </div>
