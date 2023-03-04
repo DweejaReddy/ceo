@@ -59,6 +59,7 @@ const Form = () => {
           progress: undefined,
           theme: "light",
         });
+        setForm(initRegister);
       } else {
         toast.error(message, {
           position: "top-right",
@@ -71,7 +72,6 @@ const Form = () => {
           theme: "light",
         });
       }
-      setForm(initRegister);
     },
   })
 
@@ -80,7 +80,7 @@ const Form = () => {
     mutation.mutate(form);
   }
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => setForm(pForm => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setForm(pForm => {
     return {
       ...pForm,
       [e.target.name]: e.target.value,
@@ -96,207 +96,255 @@ const Form = () => {
 
 
   return (
-    <div className="w-full pb-16 px-4 py-16 bg-white" id="form">
-      <h1 className="text-2xl text-[#ff5757] sm:text-3xl font-bold text-center py-4 ">
-        Get Started With Registration
-      </h1>
-      <div className="flex justify-center">
+    <div id="form" className='mt-20 mb-10'>
+      <div className="w-full text-4xl text-center py-6 text-red-600">
+        Register Now
+      </div>
+      <div className="py-4 flex flex-col justify-center px-10">
         <form onSubmit={handleSubmit}>
-          <div className="max-w-[1240px] mt-10 mx-auto grid md:grid-cols-2 gap-8">
-            <div className="flex flex-col ">
-              <label htmlFor="name" className="text-gray-500 font-bold">
-                Full Name*
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                value={form.name}
-                onChange={handleChange}
-                className="bg-gray-200 sm:w-[400px] appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-              />
-              {/* {errors.name && touched.name && (
-                <p className="text-sm text-red-600">{errors.name}</p>
-              )} */}
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="email" className="text-gray-500 font-bold">
-                Email*
-              </label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value={form.email}
-                onChange={handleChange}
-                className="bg-gray-200 sm:w-[400px] appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-              />
-              {/* {errors.email && touched.email && (
-                <p className="text-sm text-red-600">{errors.email}</p>
-              )} */}
-            </div>
-
-            <div className="flex flex-col">
-              <label htmlFor="phone" className="text-gray-500 font-bold">
-                Phone Number*
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                value={form.phone}
-                onChange={handleChange}
-                className="bg-gray-200 sm:w-[400px] appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-              />
-              {/* {errors.phone && touched.phone && (
-                <p className="text-sm text-red-600">{errors.phone}</p>
-              )} */}
-            </div>
-
-            <div className="flex flex-col">
-              <label htmlFor="startup" className="text-gray-500 font-bold">
-                Name of your Startup*
-              </label>
-              <input
-                type="text"
-                name="startup"
-                id="startup"
-                value={form.startup}
-                onChange={handleChange}
-                className="bg-gray-200 sm:w-[400px] appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-              />
-              {/* {errors.startup && touched.startup && (
-                <p className="text-sm text-red-600">{errors.startup}</p>
-              )} */}
-            </div>
-
-            <div className="flex flex-col">
-              <label htmlFor="place" className="text-gray-500 font-bold">
-                Place*
-              </label>
-              <input
-                type="text"
-                name="place"
-                id="place"
-                value={form.place}
-                onChange={handleChange}
-                className="bg-gray-200 sm:w-[400px] appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-              />
-              {/* {errors.place && touched.place && (
-                <p className="text-sm text-red-600">{errors.place}</p>
-              )} */}
-            </div>
-
-            <div className="flex flex-col">
-              <label htmlFor="website" className="text-gray-500 font-bold">
-                Website/LinkedIn of your Startup*
-              </label>
-              <input
-                type="text"
-                name="website"
-                id="website"
-                value={form.website}
-                onChange={handleChange}
-                className="bg-gray-200 sm:w-[400px] appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-              />
-              {/* {errors.website && touched.website && (
-                <p className="text-sm text-red-600">{errors.website}</p>
-              )} */}
-            </div>
-
-            <div className="flex flex-col">
-              <label htmlFor="sector" className="text-gray-500 font-bold">
-                Sector your Startup belong to*
-              </label>
-              <input
-                type="text"
-                name="sector"
-                id="sector"
-                value={form.sector}
-                onChange={handleChange}
-                className="bg-gray-200 sm:w-[400px] appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-              />
-              {/* {errors.sector && touched.sector && (
-                <p className="text-sm text-red-600">{errors.sector}</p>
-              )} */}
-            </div>
-
-            <div className="flex flex-col">
-              <label htmlFor="alum" className="text-gray-500 font-bold">
-                Are you a VNIT, Nagpur Student/Alumni*
-              </label>
-              <div className="flex mt-3">
-                <label htmlFor="Yes" className="text-gray-500 font-bold mr-5">
-                  Yes
-                </label>
-                <input
-                  name="alum"
-                  id="Yes"
-                  type="radio"
-                  value="yes"
-                  onChange={(e) => handleCustChange("alum", e.target.value === "yes")}
-                />
-                <label htmlFor="no" className="text-gray-500 font-bold mr-5 ml-8">
-                  No
-                </label>
-                <input
-                  name="alum"
-                  id="No"
-                  type="radio"
-                  value="no"
-                  onChange={(e) => handleCustChange("alum", e.target.value === "yes")}
-                />
+          <div className="flex flex-col xl:flex-row gap-4 justify-center">
+            <div className="shadow sm:overflow-hidden sm:rounded-md mb-4">
+              <div className="px-4 sm:px-0">
+                <h3 className="text-md font-medium leading-6 text-purple-400">
+                  Participant
+                </h3>
+                <p className="mt-1 text-sm text-white mb-4">
+                  This section contains the personal information of the participants
+                </p>
               </div>
-              {/* {errors.student && touched.student && (
-                <p className="text-sm text-red-600">{errors.student}</p>
-              )} */}
+              <div className="space-y-6 rounded-md bg-white px-4 py-5 sm:p-6">
+                <div className="grid grid-cols-6 gap-6">
+                  <div className="col-span-3">
+                    <label
+                      htmlFor="name"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Full name
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      required
+                      value={form.name}
+                      placeholder="Full Name"
+                      onChange={handleChange}
+                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                    />
+                  </div>
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="phone"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Phone Number
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <div className="mt-1 flex rounded-md shadow-sm">
+                      <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-md text-gray-500">
+                        +91
+                      </span>
+                      <input
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        required
+                        maxLength={10}
+                        value={form.phone}
+                        placeholder="Personal Phone number"
+                        onChange={handleChange}
+                        className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-span-6">
+                    <label
+                      htmlFor="email"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Email
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      required
+                      value={form.email}
+                      placeholder="Personal Email"
+                      onChange={handleChange}
+                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                    />
+                  </div>
+                  <div className="col-span-6">
+                    <label
+                      htmlFor="alum"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Are you a VNIT, Nagpur Student/Alumni
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <div className="flex mt-3">
+                      <label htmlFor="yes" className="block text-md font-medium text-gray-700 mr-5">
+                        Yes
+                      </label>
+                      <input
+                        name="alum"
+                        id="Yes"
+                        type="radio"
+                        value={form.alum.toString()}
+                        className='mt-1'
+                        onChange={(e) => handleCustChange("alum", true)}
+                      />
+                      <label htmlFor="no" className="block text-md font-medium text-gray-700 mx-5">
+                        No
+                      </label>
+                      <input
+                        name="alum"
+                        id="No"
+                        type="radio"
+                        value={form.alum.toString()}
+                        className='mt-1'
+                        onChange={(e) => handleCustChange("alum", false)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="overflow-hidden shadow sm:rounded-md mb-8 xl:px-4">
+              <div className="px-4 sm:px-0">
+                <h3 className="text-md font-medium leading-6 text-purple-400">
+                  Startup
+                </h3>
+                <p className="mt-1 text-sm text-white mb-4">
+                  This section contains the information about the startup of the participant
+                </p>
+              </div>
+              <div className="rounded-md bg-white px-4 py-5 sm:p-6">
+                <div className="grid grid-cols-6 gap-6">
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="startup"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Startup Name
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="startup"
+                      id="startup"
+                      required
+                      placeholder='Startup Name'
+                      value={form.startup}
+                      onChange={handleChange}
+                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                    />
+                  </div>
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="sector"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Sector your Startup belong to
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="sector"
+                      id="sector"
+                      required
+                      value={form.sector}
+                      placeholder="Sector of Startup"
+                      onChange={handleChange}
+                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                    />
+                  </div>
+
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="place"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Place
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="place"
+                      id="place"
+                      required
+                      value={form.place}
+                      placeholder="Startup HQ"
+                      onChange={handleChange}
+                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                    />
+                  </div>
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="website"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Website/LinkedIn of your Startup
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="website"
+                      id="website"
+                      required
+                      value={form.website}
+                      placeholder="Website/LinkedIn"
+                      onChange={handleChange}
+                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                    />
+                  </div>
+
+                  <div className="col-span-6">
+                    <label
+                      htmlFor="description"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Brief description of idea/product/service
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <textarea
+                      name="description"
+                      id="description"
+                      rows={10}
+                      required
+                      value={form.description}
+                      placeholder="Description of startup"
+                      onChange={handleChange}
+                      className="resize-none mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div className="flex flex-col mt-8 col-span-2 gap-0">
-            <label htmlFor="description" className="text-gray-500 font-bold">
-              Brief description of idea/product/service*
-            </label>
-            <textarea
-              name="description"
-              id="description"
-              value={form.description}
-              onChange={(e) => handleCustChange("description", e.target.value)}
-              className="bg-gray-200 h-44 sm:w-[100%] appearance-none border-2 border-gray-200 rounded py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white"
-            />
-          </div>
-          {/* {errors.description && touched.description && (
-            <p className="text-sm text-red-600">{errors.description}</p>
-          )} */}
-
-          <div className="my-5" >
-            <input
-              type="checkbox"
-              name="consent"
-              id="checkbox"
-              value={form.consent.toString()}
-              onChange={(e) => handleCustChange("consent", e.target.checked)}
-            />
-            <label htmlFor="consent" className="pl-3">
-              I hereby declare that i have read the{" "}
-              <a href="#broucher" className="font-bold hover:underline">
-                Brochure
-              </a>{" "}
-              and the details furnished above are correct to best of my
-              Knowledge.
-            </label>
-            {/* {errors.checkbox && touched.checkbox && (
-              <p className="text-sm text-red-600">{errors.checkbox}</p>
-            )} */}
-
-          </div>
-
-          <div className="flex items-center">
-            <button
-              type="submit"
-              className="text-[#ffffff] w-[200px] font-medium my-8 mx-auto  py-3 bg-[#000300] hover:scale-105 duration-200"
-            >
-              Submit
+          <div className="flex flex-col gap-4 items-center">
+            <div className="my-5 text-white" >
+              <input
+                type="checkbox"
+                name="consent"
+                id="checkbox"
+                value={form.consent.toString()}
+                onChange={(e) => handleCustChange("consent", e.target.checked)}
+              />
+              <label htmlFor="consent" className="pl-3">
+                I hereby declare that i have read the{" "}
+                <a href="https://drive.google.com/file/d/1UXup2gcrdkC8_WR1u1gMIHfyxiITEFlH/view" className="font-bold hover:underline">
+                  Brochure
+                </a>{" "}
+                and the details furnished above are correct to best of my
+                Knowledge.
+              </label>
+            </div>
+            <button type="submit" className="w-3/4 md:w-1/4 lg:w-1/6 inline-flex justify-center items-center border border-transparent bg-[#ff5757] py-4 px-6 text-md font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              Register
             </button>
           </div>
         </form>

@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen bg-[url('/assets/expo.jpg')] bg-cover bg-origin-border aspect-16 bg-center">
+    <div className="min-h-screen bg-[url('/assets/expo.jpg')] bg-cover bg-origin-border bg-center">
       <div className="h-screen bg-black bg-opacity-[0.8]">
         <Navbar />
         <div className="flex flex-col justify-center items-center text-white px-4 md:py-4 lg:p-10 lg:py-10">
