@@ -60,6 +60,7 @@ const Form = () => {
           theme: "light",
         });
         setForm(initRegister);
+        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeEKgO6vrl0Ybk6Lvmw6_v3cZ59bMuRpP7TekF9YaqxymYZZw/viewform?usp=sf_link"
       } else {
         toast.error(message, {
           position: "top-right",
@@ -179,6 +180,66 @@ const Form = () => {
                   </div>
                   <div className="col-span-6">
                     <label
+                      htmlFor="email"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      College
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="college"
+                      id="college"
+                      required
+                      value={form.college}
+                      placeholder="College Name"
+                      onChange={handleChange}
+                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                    />
+                  </div>
+                  <div className="col-span-3">
+                    <label
+                      htmlFor="course"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Course
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="course"
+                      id="course"
+                      required
+                      value={form.course}
+                      placeholder="Eg. BTech"
+                      onChange={handleChange}
+                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                    />
+                  </div>
+                  <div className="col-span-6 sm:col-span-3">
+                    <label
+                      htmlFor="year"
+                      className="block text-md font-medium text-gray-700"
+                    >
+                      Year
+                      <span className='text-red-600'>{ }*</span>
+                    </label>
+                    <div className="mt-1 flex rounded-md shadow-sm">
+                     
+                      <input
+                        type="text"
+                        name="year"
+                        id="year"
+                        required
+                        value={form.year}
+                        placeholder="Year of Study"
+                        onChange={handleChange}
+                        className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
+                      />
+                    </div>
+                  </div>
+                  {/* <div className="col-span-6">
+                    <label
                       htmlFor="alum"
                       className="block text-md font-medium text-gray-700"
                     >
@@ -209,11 +270,11 @@ const Form = () => {
                         onChange={(e) => handleCustChange("alum", false)}
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
-            <div className="overflow-hidden shadow sm:rounded-md mb-8 xl:px-4">
+            {/* <div className="overflow-hidden shadow sm:rounded-md mb-8 xl:px-4">
               <div className="px-4 sm:px-0">
                 <h3 className="text-md font-medium leading-6 text-purple-400">
                   Startup
@@ -323,7 +384,7 @@ const Form = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col gap-4 items-center">
             <div className="my-5 text-white" >
@@ -336,14 +397,14 @@ const Form = () => {
               />
               <label htmlFor="consent" className="pl-3">
                 I hereby declare that i have read the{" "}
-                <a href="https://drive.google.com/file/d/1UXup2gcrdkC8_WR1u1gMIHfyxiITEFlH/view" className="font-bold hover:underline">
+                <a href="https://drive.google.com/file/d/1QX1uQjMwsaK14_Ra2k6Obs3d1DQ1dGJM/view?usp=sharing" className="font-bold hover:underline">
                   Brochure
                 </a>{" "}
                 and the details furnished above are correct to best of my
                 Knowledge.
               </label>
             </div>
-            <button type="submit" className="w-3/4 md:w-1/4 lg:w-1/6 inline-flex justify-center items-center border border-transparent bg-[#ff5757] py-4 px-6 text-md font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <button type="submit" className="w-3/4 md:w-1/4 lg:w-1/6 inline-flex justify-center items-center border border-transparent bg-[#41d3bc] py-4 px-6 text-md font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
               Register
             </button>
           </div>

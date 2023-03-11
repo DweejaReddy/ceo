@@ -13,9 +13,9 @@ import ecellLogoBlack from "../public/assets/ecell-black-img.png";
 
 const navigation = [
   { name: "Home", href: "#" },
-  { name: "About Expo", href: "#about" },
+  { name: "About CEO", href: "#about" },
   { name: "Timeline", href: "#timeline" },
-  { name: "Brochure", href: "https://drive.google.com/file/d/1UXup2gcrdkC8_WR1u1gMIHfyxiITEFlH/view" },
+  { name: "Brochure", href: "https://drive.google.com/file/d/1QX1uQjMwsaK14_Ra2k6Obs3d1DQ1dGJM/view?usp=sharing" },
   { name: "Contact Us", href: "#contact" },
 ];
 
