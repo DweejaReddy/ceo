@@ -3,7 +3,7 @@ import React from "react";
 const Timeline = () => {
   return (
     <div className="w-full pt-16 text-white bg-black bg-[url('/assets/features-03-image-03.jpg')] bg-blend-luminosity bg-no-repeat bg-cover bg-center" id="timeline" >
-      <div className="h-screen bg-black bg-opacity-[0.6]">
+      <div className="bg-black bg-opacity-[0.6]">
         <div>
           <h1 className="text-3xl font-bold text-center py-4">
             TIMELINE
