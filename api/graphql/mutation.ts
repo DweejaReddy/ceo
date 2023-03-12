@@ -8,14 +8,11 @@ export const createFormMutation = graphql(`
       data {
         id
         name
-        place
         email
         phone
-        alum
-        website
-        startup
-        description
-        sector
+        college
+        course
+        year
         consent
       }
     }

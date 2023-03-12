@@ -6,13 +6,13 @@ import Navbar from "./Navbar";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen bg-[url('/assets/hero-image-01.jpg')] bg-cover bg-origin-border bg-center">
-      <div className="h-screen bg-black bg-opacity-[0.8]">
+    <div className="min-h-screen bg-black bg-[url('/assets/hero-image-01.jpg')] bg-blend-luminosity bg-cover bg-origin-border bg-center">
+      <div className="h-screen bg-black bg-opacity-[0.6]">
         <Navbar />
         <div className="flex flex-col justify-center items-center text-white px-4 md:py-4 lg:p-10 lg:py-10">
           <div className="grid grid-rows-4 gap-4 w-full h-screen items-center">
             <div className="md:text-5xl text-4xl text-center py-2 self-center md:self-start mt-6 font-semibold text-[#41d3bc] uppercase">
-            LEADING WITH VISION. DRIVING WITH PURPOSE.
+              LEADING WITH VISION. DRIVING WITH PURPOSE.
             </div>
             <div className="text-center">
               <Image

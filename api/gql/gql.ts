@@ -13,7 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  mutation Mutation($createFormInput: FormInput!) {\n    createForm(createFormInput: $createFormInput) {\n      code\n      message\n      data {\n        id\n        name\n        place\n        email\n        phone\n        alum\n        website\n        startup\n        description\n        sector\n        consent\n      }\n    }\n  }\n": types.MutationDocument,
+    "\n  mutation Mutation($createFormInput: FormInput!) {\n    createForm(createFormInput: $createFormInput) {\n      code\n      message\n      data {\n        id\n        name\n        email\n        phone\n        college\n        course\n        year\n        consent\n      }\n    }\n  }\n": types.MutationDocument,
 };
 
 /**
@@ -33,7 +33,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  mutation Mutation($createFormInput: FormInput!) {\n    createForm(createFormInput: $createFormInput) {\n      code\n      message\n      data {\n        id\n        name\n        place\n        email\n        phone\n        alum\n        website\n        startup\n        description\n        sector\n        consent\n      }\n    }\n  }\n"): (typeof documents)["\n  mutation Mutation($createFormInput: FormInput!) {\n    createForm(createFormInput: $createFormInput) {\n      code\n      message\n      data {\n        id\n        name\n        place\n        email\n        phone\n        alum\n        website\n        startup\n        description\n        sector\n        consent\n      }\n    }\n  }\n"];
+export function graphql(source: "\n  mutation Mutation($createFormInput: FormInput!) {\n    createForm(createFormInput: $createFormInput) {\n      code\n      message\n      data {\n        id\n        name\n        email\n        phone\n        college\n        course\n        year\n        consent\n      }\n    }\n  }\n"): (typeof documents)["\n  mutation Mutation($createFormInput: FormInput!) {\n    createForm(createFormInput: $createFormInput) {\n      code\n      message\n      data {\n        id\n        name\n        email\n        phone\n        college\n        course\n        year\n        consent\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

@@ -5,7 +5,6 @@ import Connection from '../public/assets/connection.png'
 import Profits from '../public/assets/profits.png'
 import Image from 'next/image'
 
-
 const Cards = () => {
   return (
     <div className='w-full py-[7rem] px-4 bg-white duration-500 relative transform transition-all translate-y-12 ease-out' data-replace='{ "translate-y-12": "translate-y-0" }'>

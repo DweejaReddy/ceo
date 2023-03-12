@@ -6,17 +6,15 @@ import request from "graphql-request";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { createFormMutation } from '@/api/graphql/mutation';
+import { useRouter } from 'next/navigation';
 
 interface registerForm {
   name: string;
   email: string;
   phone: string;
-  website: string;
-  startup: string,
-  place: string,
-  sector: string,
-  alum: boolean,
-  description: string,
+  college: string;
+  course: string;
+  year: string,
   consent: boolean;
 }
 
@@ -24,23 +22,22 @@ const initRegister: registerForm = {
   name: "",
   email: "",
   phone: "",
-  startup: "",
-  place: "",
-  sector: "",
-  alum: false,
-  website: "",
-  description: "",
+  college: "",
+  course: "",
+  year: "",
   consent: false,
 }
 
+const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 const Form = () => {
+  const router = useRouter();
   const [form, setForm] = useState<registerForm>(initRegister);
 
   // mutation
   const mutation = useMutation({
     mutationKey: ['createForm'],
-    mutationFn: async (regisForm: registerForm) => request("https://expo-backend.vercel.app/api",
+    mutationFn: async (regisForm: registerForm) => request("https://ceo-backend-alpha.vercel.app/api",
       createFormMutation,
       {
         createFormInput: regisForm,
@@ -51,7 +48,7 @@ const Form = () => {
       if (code == 201) {
         toast.success(message, {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -60,11 +57,12 @@ const Form = () => {
           theme: "light",
         });
         setForm(initRegister);
-        window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSeEKgO6vrl0Ybk6Lvmw6_v3cZ59bMuRpP7TekF9YaqxymYZZw/viewform?usp=sf_link"
+        await delay(1500);
+        router.push("https://docs.google.com/forms/d/e/1FAIpQLSeEKgO6vrl0Ybk6Lvmw6_v3cZ59bMuRpP7TekF9YaqxymYZZw/viewform?usp=sf_link");
       } else {
         toast.error(message, {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -225,7 +223,7 @@ const Form = () => {
                       <span className='text-red-600'>{ }*</span>
                     </label>
                     <div className="mt-1 flex rounded-md shadow-sm">
-                     
+
                       <input
                         type="text"
                         name="year"
@@ -238,153 +236,9 @@ const Form = () => {
                       />
                     </div>
                   </div>
-                  {/* <div className="col-span-6">
-                    <label
-                      htmlFor="alum"
-                      className="block text-md font-medium text-gray-700"
-                    >
-                      Are you a VNIT, Nagpur Student/Alumni
-                      <span className='text-red-600'>{ }*</span>
-                    </label>
-                    <div className="flex mt-3">
-                      <label htmlFor="yes" className="block text-md font-medium text-gray-700 mr-5">
-                        Yes
-                      </label>
-                      <input
-                        name="alum"
-                        id="Yes"
-                        type="radio"
-                        value={form.alum.toString()}
-                        className='mt-1'
-                        onChange={(e) => handleCustChange("alum", true)}
-                      />
-                      <label htmlFor="no" className="block text-md font-medium text-gray-700 mx-5">
-                        No
-                      </label>
-                      <input
-                        name="alum"
-                        id="No"
-                        type="radio"
-                        value={form.alum.toString()}
-                        className='mt-1'
-                        onChange={(e) => handleCustChange("alum", false)}
-                      />
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
-            {/* <div className="overflow-hidden shadow sm:rounded-md mb-8 xl:px-4">
-              <div className="px-4 sm:px-0">
-                <h3 className="text-md font-medium leading-6 text-purple-400">
-                  Startup
-                </h3>
-                <p className="mt-1 text-sm text-white mb-4">
-                  This section contains the information about the startup of the participant
-                </p>
-              </div>
-              <div className="rounded-md bg-white px-4 py-5 sm:p-6">
-                <div className="grid grid-cols-6 gap-6">
-                  <div className="col-span-6 sm:col-span-3">
-                    <label
-                      htmlFor="startup"
-                      className="block text-md font-medium text-gray-700"
-                    >
-                      Startup Name
-                      <span className='text-red-600'>{ }*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="startup"
-                      id="startup"
-                      required
-                      placeholder='Startup Name'
-                      value={form.startup}
-                      onChange={handleChange}
-                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
-                    />
-                  </div>
-                  <div className="col-span-6 sm:col-span-3">
-                    <label
-                      htmlFor="sector"
-                      className="block text-md font-medium text-gray-700"
-                    >
-                      Sector your Startup belong to
-                      <span className='text-red-600'>{ }*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="sector"
-                      id="sector"
-                      required
-                      value={form.sector}
-                      placeholder="Sector of Startup"
-                      onChange={handleChange}
-                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
-                    />
-                  </div>
-
-                  <div className="col-span-6 sm:col-span-3">
-                    <label
-                      htmlFor="place"
-                      className="block text-md font-medium text-gray-700"
-                    >
-                      Place
-                      <span className='text-red-600'>{ }*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="place"
-                      id="place"
-                      required
-                      value={form.place}
-                      placeholder="Startup HQ"
-                      onChange={handleChange}
-                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
-                    />
-                  </div>
-                  <div className="col-span-6 sm:col-span-3">
-                    <label
-                      htmlFor="website"
-                      className="block text-md font-medium text-gray-700"
-                    >
-                      Website/LinkedIn of your Startup
-                      <span className='text-red-600'>{ }*</span>
-                    </label>
-                    <input
-                      type="text"
-                      name="website"
-                      id="website"
-                      required
-                      value={form.website}
-                      placeholder="Website/LinkedIn"
-                      onChange={handleChange}
-                      className="mt-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
-                    />
-                  </div>
-
-                  <div className="col-span-6">
-                    <label
-                      htmlFor="description"
-                      className="block text-md font-medium text-gray-700"
-                    >
-                      Brief description of idea/product/service
-                      <span className='text-red-600'>{ }*</span>
-                    </label>
-                    <textarea
-                      name="description"
-                      id="description"
-                      rows={10}
-                      required
-                      value={form.description}
-                      placeholder="Description of startup"
-                      onChange={handleChange}
-                      className="resize-none mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-md"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div> */}
           </div>
           <div className="flex flex-col gap-4 items-center">
             <div className="my-5 text-white" >
@@ -397,7 +251,7 @@ const Form = () => {
               />
               <label htmlFor="consent" className="pl-3">
                 I hereby declare that i have read the{" "}
-                <a href="https://drive.google.com/file/d/1QX1uQjMwsaK14_Ra2k6Obs3d1DQ1dGJM/view?usp=sharing" className="font-bold hover:underline">
+                <a href="https://drive.google.com/file/d/1QX1uQjMwsaK14_Ra2k6Obs3d1DQ1dGJM/view?usp=sharing" className="font-black hover:underline underline-offset-4 underline">
                   Brochure
                 </a>{" "}
                 and the details furnished above are correct to best of my

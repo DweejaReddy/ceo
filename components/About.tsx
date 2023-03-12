@@ -11,13 +11,13 @@ const About = () => {
           <p className="text-[#41d3bc] text-3xl font-bold">ABOUT CEO</p>
           <h1 className="md:text-4xl text-3xl font-bold py-4">Get Ready to become a leader</h1>
           <p className="text-xl">
-          CEO, an event designed to cultivate
-management and leadership qualities
-in college students. Through this
-engaging experience, participants will
-have the opportunity to tackle realworld challenges, take calculated risks,
-and exceed their competition to
-become influential leaders.
+            CEO, an event designed to cultivate
+            management and leadership qualities
+            in college students. Through this
+            engaging experience, participants will
+            have the opportunity to tackle realworld challenges, take calculated risks,
+            and exceed their competition to
+            become influential leaders.
           </p>
           <button className="text-[#ffffff] w-[200px] font-medium my-8 mx-auto md:mx-0 py-3 bg-[#000300] hover:scale-105 hover:text-white duration-200">
             <a href='#form'>Register Now</a>

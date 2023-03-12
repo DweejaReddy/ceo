@@ -6,13 +6,10 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import Image from "next/image";
 
-import logo from "../public/assets/logo.png"
-
 import ecellLogoWhite from "../public/assets/ecell-white-img.png";
 import ecellLogoBlack from "../public/assets/ecell-black-img.png";
 
 const navigation = [
-  { name: "Home", href: "#" },
   { name: "About CEO", href: "#about" },
   { name: "Timeline", href: "#timeline" },
   { name: "Brochure", href: "https://drive.google.com/file/d/1QX1uQjMwsaK14_Ra2k6Obs3d1DQ1dGJM/view?usp=sharing" },
@@ -33,16 +30,6 @@ const Navbar = () => {
                 priority
                 src={ecellLogoWhite}
                 alt="E-Cell VNIT"
-              />
-            </a>
-            <div className="border bg-white border-white"></div>
-            <a href="https://www.ecellvnit.org/">
-              <Image
-                height={150}
-                width={150}
-                priority
-                src={logo}
-                alt="Expo"
               />
             </a>
           </div>

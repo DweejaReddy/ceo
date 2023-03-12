@@ -9,27 +9,21 @@ interface Response {
 type Form {
   id: ID!
   name: String!
-  place: String!
   email: String!
   phone: String!
-  alum: Boolean!
-  website: String!
-  startup: String!
-  description: String!
-  sector: String!
+  college: String!
+  course: String!
+  year: String!
   consent: Boolean!
 }
 
 input FormInput {
   name: String!
-  place: String!
   email: String!
   phone: String!
-  alum: Boolean!
-  website: String!
-  startup: String!
-  description: String!
-  sector: String!
+  college: String!
+  course: String!
+  year: String!
   consent: Boolean! 
 }
 
