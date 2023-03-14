@@ -251,14 +251,14 @@ const Form = () => {
               />
               <label htmlFor="consent" className="pl-3">
                 I hereby declare that i have read the{" "}
-                <a href="https://drive.google.com/file/d/1QX1uQjMwsaK14_Ra2k6Obs3d1DQ1dGJM/view?usp=sharing" className="font-black hover:underline underline-offset-4 underline">
+                <a href="https://drive.google.com/file/d/1LlRKzo1LM-IMSEBVN6rx2_5NVC_PQ8IP/view?usp=sharing" className="font-black hover:underline underline-offset-4 underline">
                   Brochure
                 </a>{" "}
                 and the details furnished above are correct to best of my
                 Knowledge.
               </label>
             </div>
-            <button type="submit" className="w-3/4 md:w-1/4 lg:w-1/6 inline-flex justify-center items-center border border-transparent bg-[#41d3bc] py-4 px-6 text-md font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <button type="submit" className="w-3/4 md:w-1/4 lg:w-1/6 inline-flex justify-center items-center border border-transparent bg-gradient-to-r from-[#00a4f9] to-[#0164eb] hover:from-[#0164eb] hover:to-[#00a4f9] py-4 px-6 text-md font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
               Register
             </button>
           </div>
