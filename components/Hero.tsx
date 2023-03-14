@@ -11,7 +11,7 @@ const Hero = () => {
         <Navbar />
         <div className="flex flex-col justify-center items-center text-white px-4 md:py-4 lg:py-10 xl:px-20">
           <div className="grid grid-rows-4 gap-4 w-full h-screen items-center">
-            <div className="md:text-3xl text-4xl text-center py-2 self-center md:self-center mt-6 font-semibold text-[#00a4f9] uppercase">
+            <div className="md:text-3xl text-4xl text-center py-2 self-center md:self-center mt-3 font-semibold text-[#00a4f9] uppercase">
               LEADING WITH VISION. DRIVING WITH PURPOSE.
             </div>
             <div className="text-center w-full h-fit">

@@ -96,7 +96,7 @@ const Form = () => {
 
   return (
     <div id="form" className='mt-20 mb-10'>
-      <div className="w-full text-4xl text-center py-6 text-[#0164eb]">
+      <div className="w-full text-4xl text-center py-6 text-transparent bg-clip-text bg-gradient-to-r from-[#00a4f9] to-[#0164eb]">
         Register Now
       </div>
       <div className="py-4 flex flex-col justify-center px-10">
