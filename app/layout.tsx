@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta name="viewport" content="width=device-width" initial-scale="1" interactive-widget="resizes-content" />
-      <body className={classNames("h-full w-full overflow-x-hidden", poppins.className)}>
+      <body className={classNames("h-screen w-screen overflow-x-hidden", poppins.className)}>
         <Providers>
           {children}
         </Providers>
