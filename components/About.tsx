@@ -8,7 +8,7 @@ const About = () => {
       <div className="mx-auto grid md:grid-cols-2 gap-8">
         <Image className="" src={Home} alt="Home" />
         <div className="flex flex-col justify-center">
-          <p className="text-[#00a4f9] text-3xl font-bold">ABOUT CEO</p>
+          <p className="text-[#00a4f9] text-3xl font-extrabold">ABOUT CEO</p>
           <h1 className="md:text-4xl text-3xl font-bold py-4">Get Ready to become a leader</h1>
           <p className="text-xl">
             CEO, an event designed to cultivate

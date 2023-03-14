@@ -96,7 +96,7 @@ const Form = () => {
 
   return (
     <div id="form" className='mt-20 mb-10'>
-      <div className="w-full text-4xl text-center py-6 text-red-600">
+      <div className="w-full text-4xl text-center py-6 text-[#0164eb]">
         Register Now
       </div>
       <div className="py-4 flex flex-col justify-center px-10">
@@ -104,7 +104,7 @@ const Form = () => {
           <div className="flex flex-col xl:flex-row gap-4 justify-center">
             <div className="shadow sm:overflow-hidden sm:rounded-md mb-4">
               <div className="px-4 sm:px-0">
-                <h3 className="text-md font-medium leading-6 text-purple-400">
+                <h3 className="text-md font-medium leading-6 text-[#0164eb]">
                   Participant
                 </h3>
                 <p className="mt-1 text-sm text-white mb-4">
@@ -258,7 +258,7 @@ const Form = () => {
                 Knowledge.
               </label>
             </div>
-            <button type="submit" className="w-3/4 md:w-1/4 lg:w-1/6 inline-flex justify-center items-center border border-transparent bg-gradient-to-r from-[#00a4f9] to-[#0164eb] hover:from-[#0164eb] hover:to-[#00a4f9] py-4 px-6 text-md font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <button type="submit" className="w-3/4 md:w-1/4 lg:w-1/6 inline-flex justify-center items-center border border-transparent bg-gradient-to-b from-[#00a4f9] to-[#0164eb] hover:from-[#0164eb] hover:to-[#0164eb] py-4 px-6 text-md font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
               Register
             </button>
           </div>
